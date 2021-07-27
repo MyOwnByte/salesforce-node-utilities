@@ -17,4 +17,4 @@ SalesforceUsername, SalesforcePassword, SalesforceSecurityToken, SalesforceUrl
 
 ### SalesforceDataExportFileDownloader.js
 Salesforce doesn't provide a way to download all zip files that are part of a monthly or weekly data export. Instead admins have to manually click file by file.
-This script downloads data export .zip files into a download directory specified in .env file as "SalesforceDataExportFileDownloader_BackupFolder"
+This script downloads data export .zip files into a download directory specified in .env file as "SalesforceDataExportFileDownloader_BackupFolder" (For WSL use notation "/mnt/c/")

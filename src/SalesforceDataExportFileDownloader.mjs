@@ -1,8 +1,10 @@
-const fs = require('fs');
-const { JSDOM } = require('jsdom');
-const https = require('https');
+import fs from 'fs';
+import https from 'https';
+import jsdom from 'jsdom';
+import path from 'path';
 
-module.exports = class SalesforceDataExportFileDownloader {
+
+class SalesforceDataExportFileDownloader {
     #EXPORT_DATA_URL = '/ui/setup/export/DataExportPage/d';
     #DOWNLOAD_URL = '/servlet/servlet.OrgExport';
 
@@ -35,7 +37,7 @@ module.exports = class SalesforceDataExportFileDownloader {
     }
 
     #downloadBodyFinished = function(body) {
-        const dom = new JSDOM(body);
+        const dom = new jsdom.JSDOM(body);
         let allDownloadLinks = dom.window.document.querySelectorAll('a.actionLink');
         
         let urlList = [];
@@ -51,8 +53,8 @@ module.exports = class SalesforceDataExportFileDownloader {
         this.#downloadFiles(urlList);
     }
 
-    #performDownload = function(url, dest, callback){
-        const file = fs.createWriteStream(dest);
+    #performDownload = function(url, destinationFolder){
+        const file = fs.createWriteStream(destinationFolder);
         https.get(
             url, 
             { 
@@ -77,8 +79,9 @@ module.exports = class SalesforceDataExportFileDownloader {
     #downloadFiles = function(urlList) {
         urlList.forEach(function(downloadUrl) {
             let filename = this.#getFilename(downloadUrl);
-            console.log('Downloading ' + filename);
-            this.#performDownload(downloadUrl, this.folderToStoreFiles + filename, function() {
+            console.log('Downloading: ' + filename);
+            //this.#performDownload(downloadUrl, this.folderToStoreFiles + filename, function() {
+            this.#performDownload(downloadUrl, path.join(this.folderToStoreFiles + filename), function() {
                 console.log('Finished Downloading:' + filename)
             });
         }.bind(this));
@@ -92,3 +95,5 @@ module.exports = class SalesforceDataExportFileDownloader {
         return downloadUrl.slice(startIndex, endIndex);
     }
 }
+
+export default SalesforceDataExportFileDownloader;

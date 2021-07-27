@@ -1,6 +1,6 @@
-const jsforce = require('jsforce');
+import jsforce from 'jsforce'
 
-module.exports = class SalesforceConnection {
+class SalesforceConnection {
     constructor(salesforceUrl, username, password, securityToken) {
         this.salesforceUrl = salesforceUrl;
         this.username = username;
@@ -21,3 +21,5 @@ module.exports = class SalesforceConnection {
         this.connection = conn;
     }
 }
+
+export default SalesforceConnection;
