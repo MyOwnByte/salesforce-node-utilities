@@ -1,5 +1,4 @@
 #!/usr/bin/env node
 
-import exportdata from '../src/handlers/salesforce-data-export-downloader.mjs';
-exportdata(process.argv);
-// require('../src/salesforce-data-export-downloader.mjs').exportdata(process.argv);
+import downloadData from '../src/handlers/salesforce-data-export-downloader.mjs';
+downloadData(process.argv);

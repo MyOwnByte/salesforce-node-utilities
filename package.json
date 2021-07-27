@@ -3,19 +3,19 @@
   "version": "1.0.0",
   "description": "CLI Utilities for Salesforce",
   "type": "module",
-  "main": "src/index.mjs",
+  "main": "src/salesforce-data-export-downloader.mjs",
   "bin": {
     "salesforce-data-export-downloader": "bin/salesforce-data-export-downloader.mjs"
   },
   "publishConfig": {
     "access": "public"
   },
-  "keywords": ["salesforce"],
+  "keywords": [
+    "salesforce"
+  ],
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start-node-below-v12": "node --experimental-modules index.mjs",
-    "start": "node index.mjs"
-
+    "start-node-below-v12": "node --experimental-modules salesforce-data-export-downloader.mjs",
+    "start": "node salesforce-data-export-downloader.mjs"
   },
   "author": "MyOwnByte",
   "license": "ISC",
