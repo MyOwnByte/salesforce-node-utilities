@@ -80,7 +80,6 @@ class SalesforceDataExportFileDownloader {
         urlList.forEach(function(downloadUrl) {
             let filename = this.#getFilename(downloadUrl);
             console.log('Downloading: ' + filename);
-            //this.#performDownload(downloadUrl, this.folderToStoreFiles + filename, function() {
             this.#performDownload(downloadUrl, path.join(this.folderToStoreFiles + filename), function() {
                 console.log('Finished Downloading:' + filename)
             });

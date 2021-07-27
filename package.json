@@ -1,9 +1,16 @@
 {
-  "name": "salesforce-node-utilities",
+  "name": "@myownbyte/salesforce-node-utilities",
   "version": "1.0.0",
-  "description": "Salesforce node utilities. Uses jsforce",
+  "description": "CLI Utilities for Salesforce",
   "type": "module",
-  "main": "index.mjs",
+  "main": "src/index.mjs",
+  "bin": {
+    "salesforce-data-export-downloader": "bin/salesforce-data-export-downloader.mjs"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "keywords": ["salesforce"],
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start-node-below-v12": "node --experimental-modules index.mjs",
