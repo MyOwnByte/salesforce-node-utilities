@@ -4,6 +4,11 @@
   "description": "CLI Utilities for Salesforce",
   "type": "module",
   "main": "src/salesforce-data-export-downloader.mjs",
+  "homepage": "https://github.com/MyOwnByte/salesforce-node-utilities",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/MyOwnByte/salesforce-node-utilities"
+  },
   "bin": {
     "salesforce-data-export-downloader": "bin/salesforce-data-export-downloader.mjs"
   },
@@ -18,7 +23,7 @@
     "start": "node salesforce-data-export-downloader.mjs"
   },
   "author": "MyOwnByte",
-  "license": "ISC",
+  "license": "MIT",
   "dependencies": {
     "dotenv": "^10.0.0",
     "jsdom": "^16.6.0",
