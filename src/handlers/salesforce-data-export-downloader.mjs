@@ -21,7 +21,6 @@ async function downloadData(args) {
         sfConnection.connection.accessToken, 
         backupFolder);
     downloader.download();
-    downloader.asdf();
 }
 
 export default downloadData;
