@@ -1,6 +1,6 @@
 {
   "name": "@myownbyte/salesforce-node-utilities",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "CLI Utilities for Salesforce",
   "type": "module",
   "main": "src/salesforce-data-export-downloader.mjs",
